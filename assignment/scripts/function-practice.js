@@ -15,47 +15,85 @@ console.log('Test - should say "Hello World!"', hello());
 // 2. Function to return an personalized hello, using the `name` argument.
 //    for example 'Hello, Jo!', or 'Hello, Stacy!'
 function helloName(name) {
-  return;
+  return `Hello, ${name}!`;
 }
 // Remember to call the function to test
-
+console.log(helloName("Abdirizak"));
 
 // 3. Function to add two numbers together & return the result
-function addNumbers(firstNumber) {
-  // return firstNumber + secondNumber;
+function addNumbers(firstNumber, secondNumber) {
+  return firstNumber + secondNumber;
 }
-
+console.log(addNumbers(3,5)); // 8
 
 // 4. Function to multiply three numbers & return the result
-function multiplyThree() {
+function multiplyThree(a,b,c) {
+  return a * b * c;
 
 }
+    //  check
+console.log(multiplyThree(3,5,10)); // 150
+console.log(multiplyThree(7,15,80)); // 8400
 
 
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive(number) {
   if (number > 0) {
-    return;
+    return true;
+  }else{
+    return false;
+
   }
-  return;
 }
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
 
 
+      // Check
+      console.log(isPositive(5));  // True
+      console.log(isPositive(-5));   // False
+
+
 // 6. Function to return the _last_ item in an array. If the 
 //    array is empty, return `undefined`.
 function getLast(array) {
+if(i = array[array.length -1 ]){
+  return i;
 
+} else if (array.length === 0){
+  return undefined;
 }
+else{
+  return null;  // Added because i didn't wanted to END without ELSE statement! Even though it won't be executed!
+}
+}
+    //  Check
+console.log("Last item in the array is:",  getLast([5,7,8,12])) // 12
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
-function find(value, array) {
 
+function find(value, array) {
+for(let i = 0; i < array.length; i++){
+  if (value === array[i]){
+    return true;
+
+  }
+  else{
+    return false;
+  }
 }
+}   
+
+    // Check
+    // Console prints 'false' for both answer, but it seems the first console 
+    // should print 'true' whiile the other 'false'
+
+    console.log(find(3, [1, 2, 3, 4, 5]));  // false
+    console.log(find("c",[ "a","b","c","d"])); //false
+
 
 // ----------------------
 // Stretch Goals
@@ -86,6 +124,30 @@ function allPositive() {
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
 //     here in a comment, write the function, and test it!
+
+  // *** COPY of the Instructions from the edabit Challenges below! **
+
+  // Create a function that takes a number as an argument. 
+  // Add up all the numbers from 1 to the number you passed to the function. 
+  // For example, if the input is 4 then your function should return 10 because 1 + 2 + 3 + 4 = 10.
+    
+  // *** SOLUTION ***
+
+ function addUp (num){
+  let sum = 0;
+  for (let i =1; i<= num; i++){  // Looping through 'num' in this case from 1 to 4;
+    sum += i;
+  }
+  return sum;
+ }
+   
+console.log("*********") // divider for the console
+
+
+  // Check
+ console.log(addUp(4)) // (1+2+3+4) then it prints 10
+ console.log(addUp(5)) // (1+2+3+4+5) then it prints 15
+
 
 
 // DO NOT MODIFY
