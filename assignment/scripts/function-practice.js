@@ -18,7 +18,7 @@ function helloName(name) {
   return `Hello, ${name}!`;
 }
 // Remember to call the function to test
-console.log(helloName("Abdirizak"));
+console.log(helloName("Abdirizak")); // Hello, Abdirizak!
 
 // 3. Function to add two numbers together & return the result
 function addNumbers(firstNumber, secondNumber) {
@@ -39,12 +39,10 @@ console.log(multiplyThree(7,15,80)); // 8400
 // 5. Function that will return true if a number is positive, 
 //    or greater than zero, and false otherwise
 function isPositive(number) {
-  if (number > 0) {
+  if (number > 0 ) {
     return true;
-  }else{
-    return false;
-
   }
+  return false
 }
 // Call the function to test each outcome (true & false) 
 // Write a separate console.log statement for each outcome
@@ -52,6 +50,7 @@ function isPositive(number) {
 
       // Check
       console.log(isPositive(5));  // True
+      console.log(isPositive(0));  // False
       console.log(isPositive(-5));   // False
 
 
@@ -76,50 +75,75 @@ console.log("Last item in the array is:",  getLast([5,7,8,12])) // 12
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 
 function find(value, array) {
-for(let i = 0; i < array.length; i++){
-  if (value === array[i]){
+for(let item of array){
+  if (value === item){
     return true;
+  }
 
-  }
-  else{
-    return false;
-  }
 }
+return false
 }   
 
     // Check
-    // Console prints 'false' for both answer, but it seems the first console 
-    // should print 'true' whiile the other 'false'
+    console.log(find(3, [1, 2, 7, 4, 5]));  // false
+    console.log(find(3, [1, 2, "3", 4, 5]));  // false
+    console.log(find("c",[ "a","b","c","d"])); //true
+    console.log(find("c",[ "a","b","f","d"])); //false
 
-    console.log(find(3, [1, 2, 3, 4, 5]));  // false
-    console.log(find("c",[ "a","b","c","d"])); //false
 
-
+    console.log("*********") // divider for the console
 // ----------------------
 // Stretch Goals
 // ----------------------
 // 8. Function to check if a letter is the first letter in a 
 //    string. Return true if it is, and false otherwise
 function isFirstLetter(letter, string) {
-
+ if (string.length === 0){  //checks if it empty string
+  return false
+ }
+ else if( string[0]=== letter){ // checks if 1st letter of the str is same as letter
+  return true;
+ }
+ else{
+  return false;   //checks any other case 
+ }
 }
+console.log('is there Char?:',isFirstLetter("a", "")) // false
+console.log('Are they same:',isFirstLetter("a", "apple"))  //true
+console.log('Are they same:',isFirstLetter("a", "Mango")) //false
 
 
 // 9. Function to return the sum of all numbers in an array
 function sumAll(array) {
   let sum = 0;
-  // TODO: loop to add items
 
-  // TODO: return the sum
+  // TODO: loop to add items
+for(let i = 0; i<array.length; i++){
+  sum = array[i]+ sum;
+
 }
+  // TODO: return the sum
+  return sum;
+}
+console.log( sumAll([2,3,4])); // 9
+console.log( sumAll([20,35,45])); // 100
 
 // 10. Function to return a new array of all positive (greater than zero)
 //     numbers contained in an input array. If there are no positive numbers
 //     return an empty array. Note: The input array should not change.
-function allPositive() {
+function allPositive(inputArray) {
+  let newArr = [];
+  for(let i = 0; i < inputArray.length; i++){
+    if(inputArray[i] > 0){
+      newArr.push(inputArray[i]);
+    }
+  }
+ 
+  return newArr;
+
 
 }
-
+console.log(allPositive([2,3,5,6,-2,-3,-5,-6])) // [2,3,5,6]
 
 // 11. Pick a problem from Edabit(https://edabit.com/) or 
 //     CodeWars(https://www.codewars.com/). Then describe it 
